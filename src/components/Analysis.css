@@ -1,0 +1,62 @@
+.analysis-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.as-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.as-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.as-item {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.as-warning {
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+}
+
+.as-info {
+  background: #eef2ff;
+  border-left: 3px solid #4f46e5;
+}
+
+.as-good {
+  background: #d1fae5;
+  border-left: 3px solid #10b981;
+}
+
+.as-tip {
+  background: #f3f4f6;
+  border-left: 3px solid #9ca3af;
+}
+
+.as-positive {
+  background: #d1fae5;
+  border-left: 3px solid #10b981;
+}
+
+.as-icon {
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.as-text {
+  color: #444;
+}

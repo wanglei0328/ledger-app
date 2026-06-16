@@ -1,0 +1,47 @@
+.bill-group {
+  margin-bottom: 16px;
+}
+
+.bg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px 8px;
+  position: sticky;
+  top: 0;
+  background: #f7f8fa;
+  z-index: 1;
+}
+
+.bg-date-main {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.bg-date-sub {
+  font-size: 12px;
+  color: #999;
+  margin-left: 8px;
+}
+
+.bg-sum {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.bg-sum-expense {
+  color: #e53e3e;
+}
+
+.bg-sum-income {
+  color: #10b981;
+}
+
+.bg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

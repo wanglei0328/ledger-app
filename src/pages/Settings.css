@@ -1,0 +1,160 @@
+.settings-page {
+  padding: 16px 16px 100px;
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+.settings-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 200;
+  animation: toastIn 0.3s ease;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.settings-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.settings-danger {
+  border: 1px solid #fecaca;
+}
+
+.se-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.se-desc {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.se-budget-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.se-yuan {
+  font-size: 20px;
+  color: #666;
+}
+
+.se-budget-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.se-budget-input:focus {
+  border-color: #4f46e5;
+}
+
+.se-budget-save {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.se-budget-current {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.se-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.se-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.se-btn:active {
+  transform: scale(0.97);
+}
+
+.se-btn-export {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.se-btn-import {
+  background: #f0fdf4;
+  color: #10b981;
+}
+
+.se-btn-clear {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.se-clear-confirm {
+  margin-top: 8px;
+}
+
+.se-clear-warn {
+  font-size: 13px;
+  color: #ef4444;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.se-clear-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.se-btn-clear-yes {
+  background: #ef4444;
+  color: #fff;
+}
+
+.se-btn-clear-no {
+  background: #f3f4f6;
+  color: #666;
+}
+
+.settings-version {
+  text-align: center;
+  font-size: 12px;
+  color: #ccc;
+  padding: 20px 0;
+}

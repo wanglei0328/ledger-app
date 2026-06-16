@@ -1,0 +1,40 @@
+.number-pad {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.np-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.np-key {
+  flex: 1;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  background: #f5f5f5;
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.np-key:active {
+  background: #e0e0e0;
+  transform: scale(0.95);
+}
+
+.np-key-del {
+  background: #e8e8e8;
+  font-size: 18px;
+}
+
+.np-key-zero {
+  /* 占位与其他一致 */
+}

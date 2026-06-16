@@ -1,0 +1,234 @@
+.stats-page {
+  padding: 0 16px 100px;
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* 月份切换 */
+.stats-month-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0 12px;
+}
+
+.sms-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.sms-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.sms-btn:active:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.sms-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* 总览卡片 - 三栏布局 */
+.stats-overview {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 16px;
+  padding: 20px 16px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.so-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.so-card {
+  flex: 1;
+  min-width: 90px;
+  text-align: center;
+}
+
+.so-label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.so-amount {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.so-amount-income {
+  color: #6ee7b7;
+}
+
+.so-sub {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.so-net-position {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.so-budget {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.so-budget .so-label {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.so-budget .bb-track {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.so-budget .bb-info {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 分区 */
+.stats-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.ss-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* 分类排行 */
+.ss-ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.ss-rank-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f9fafb;
+  position: relative;
+  overflow: hidden;
+}
+
+.ss-rank-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.ss-rank-medal {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+}
+
+.ss-rank-emoji {
+  font-size: 18px;
+}
+
+.ss-rank-name {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.ss-rank-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.ss-rank-amount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e53e3e;
+}
+
+.ss-rank-amount-income {
+  font-size: 14px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.ss-rank-pct {
+  font-size: 12px;
+  color: #999;
+  width: 30px;
+  text-align: right;
+}
+
+.ss-rank-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(79, 70, 229, 0.06);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.ss-rank-bar-income {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* 空状态 */
+.stats-empty {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.stats-empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.stats-empty-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.stats-empty-sub {
+  font-size: 13px;
+  color: #999;
+}
