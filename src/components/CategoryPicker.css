@@ -1,28 +1,34 @@
 .category-picker {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  max-width: 360px;
+  max-width: 320px;
   margin: 0 auto;
 }
 
 .cp-item {
+  width: calc(25% - 6px);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
   padding: 10px 4px;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  background: #f9f9f9;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-card);
   cursor: pointer;
-  transition: all 0.2s;
-  -webkit-tap-highlight-color: transparent;
+  box-shadow: var(--shadow-sm);
+  will-change: transform, border-color, background;
+  transition: transform var(--transition-fast), border-color var(--transition-normal), background var(--transition-normal), box-shadow var(--transition-normal);
+}
+.cp-item:active {
+  transform: scale(0.95);
 }
 
 .cp-item-active {
-  border-color: #4f46e5;
-  background: #eef2ff;
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
   transform: scale(1.05);
 }
 
@@ -32,10 +38,10 @@
 
 .cp-name {
   font-size: 12px;
-  color: #666;
+  color: var(--color-text-muted);
+  font-weight: 400;
 }
-
 .cp-item-active .cp-name {
-  color: #4f46e5;
+  color: var(--color-primary);
   font-weight: 600;
 }

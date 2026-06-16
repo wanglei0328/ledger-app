@@ -1,5 +1,5 @@
 .bill-group {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .bg-header {
@@ -9,19 +9,19 @@
   padding: 0 4px 8px;
   position: sticky;
   top: 0;
-  background: #f7f8fa;
+  background: var(--color-bg);
   z-index: 1;
 }
 
 .bg-date-main {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  color: #333;
+  color: var(--color-text);
 }
 
 .bg-date-sub {
   font-size: 12px;
-  color: #999;
+  color: var(--color-text-muted);
   margin-left: 8px;
 }
 
@@ -32,13 +32,8 @@
   font-weight: 500;
 }
 
-.bg-sum-expense {
-  color: #e53e3e;
-}
-
-.bg-sum-income {
-  color: #10b981;
-}
+.bg-sum-expense { color: var(--color-expense); }
+.bg-sum-income { color: var(--color-income); }
 
 .bg-list {
   display: flex;

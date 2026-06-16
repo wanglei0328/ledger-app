@@ -1,62 +1,47 @@
 .analysis-section {
-  background: #fff;
-  border-radius: 16px;
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
   padding: 16px;
   margin-top: 16px;
+  box-shadow: var(--shadow-sm);
 }
 
 .as-title {
   font-size: 15px;
   font-weight: 600;
-  color: #333;
+  color: var(--color-text);
   margin-bottom: 12px;
 }
 
 .as-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .as-item {
   display: flex;
   gap: 8px;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   font-size: 13px;
   line-height: 1.6;
+  animation: slideUp 0.3s ease both;
 }
+.as-item:nth-child(1) { animation-delay: 0s; }
+.as-item:nth-child(2) { animation-delay: 0.05s; }
+.as-item:nth-child(3) { animation-delay: 0.1s; }
+.as-item:nth-child(4) { animation-delay: 0.15s; }
+.as-item:nth-child(5) { animation-delay: 0.2s; }
+.as-item:nth-child(6) { animation-delay: 0.25s; }
+.as-item:nth-child(7) { animation-delay: 0.3s; }
+.as-item:nth-child(8) { animation-delay: 0.35s; }
 
-.as-warning {
-  background: #fef3c7;
-  border-left: 3px solid #f59e0b;
-}
+.as-warning { background: var(--color-warning-light); border-left: 3px solid var(--color-warning); }
+.as-info { background: var(--color-primary-light); border-left: 3px solid var(--color-primary); }
+.as-good { background: var(--color-income-light); border-left: 3px solid var(--color-income); }
+.as-tip { background: #f1f5f9; border-left: 3px solid var(--color-text-muted); }
+.as-positive { background: var(--color-income-light); border-left: 3px solid var(--color-income); }
 
-.as-info {
-  background: #eef2ff;
-  border-left: 3px solid #4f46e5;
-}
-
-.as-good {
-  background: #d1fae5;
-  border-left: 3px solid #10b981;
-}
-
-.as-tip {
-  background: #f3f4f6;
-  border-left: 3px solid #9ca3af;
-}
-
-.as-positive {
-  background: #d1fae5;
-  border-left: 3px solid #10b981;
-}
-
-.as-icon {
-  flex-shrink: 0;
-  font-size: 16px;
-}
-
-.as-text {
-  color: #444;
-}
+.as-icon { flex-shrink: 0; font-size: 16px; }
+.as-text { color: var(--color-text-secondary); }

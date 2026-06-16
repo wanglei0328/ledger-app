@@ -12,14 +12,18 @@ const TABS = [
 ];
 
 export default function TabBar({ activeTab, onTabChange }: Props) {
+  const idx = TABS.findIndex(t => t.key === activeTab);
+
   return (
     <div className="tab-bar">
-      {TABS.map(tab => (
+      {TABS.map((tab, i) => (
         <button
           key={tab.key}
-          className={`tab-item ${activeTab === tab.key ? 'tab-active' : ''}`}
+          className="tab-btn"
+          data-active={activeTab === tab.key}
           onClick={() => onTabChange(tab.key)}
           type="button"
+          aria-label={tab.label}
         >
           <span className="tab-icon">{tab.icon}</span>
           <span className="tab-label">{tab.label}</span>

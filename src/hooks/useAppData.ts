@@ -1,14 +1,21 @@
 import { useState, useCallback, useEffect } from 'react';
-import type { AppData, Bill } from '../types';
-import { loadData, addBill, deleteBill, setBudget, exportData, importData, clearAllData, generateId } from '../data/storage';
+import type { AppData, Bill, RecurringBill } from '../types';
+import {
+  loadData, addBill, deleteBill, setBudget, exportData, importData, clearAllData, generateId,
+  processRecurringBills, addRecurringBill, updateRecurringBill, deleteRecurringBill,
+} from '../data/storage';
 
 export function useAppData() {
-  const [data, setData] = useState<AppData>(() => loadData());
+  const [data, setData] = useState<AppData>(() => {
+    // 首次加载时处理周期账单
+    return processRecurringBills();
+  });
 
   useEffect(() => {
-    setData(loadData());
+    setData(processRecurringBills());
   }, []);
 
+  // === 账单操作 ===
   const add = useCallback((
     amount: number,
     categoryKey: string,
@@ -16,49 +23,46 @@ export function useAppData() {
     date: string,
     type: 'expense' | 'income' = 'expense',
   ) => {
-    const bill: Bill = {
-      id: generateId(),
-      amount,
-      type,
-      categoryKey,
-      note: note.trim(),
-      date,
-    };
-    const newData = addBill(bill);
-    setData(newData);
+    const bill: Bill = { id: generateId(), amount, type, categoryKey, note: note.trim(), date };
+    setData(addBill(bill));
   }, []);
 
   const remove = useCallback((id: string) => {
-    const newData = deleteBill(id);
-    setData(newData);
+    setData(deleteBill(id));
   }, []);
 
   const updateBudget = useCallback((amount: number) => {
-    const newData = setBudget(amount);
-    setData(newData);
+    setData(setBudget(amount));
   }, []);
 
-  const exportAll = useCallback(() => {
-    return exportData();
-  }, []);
-
+  const exportAll = useCallback(() => exportData(), []);
   const importAll = useCallback((json: string) => {
-    const newData = importData(json);
-    setData(newData);
+    setData(importData(json));
   }, []);
-
   const clearAll = useCallback(() => {
-    const newData = clearAllData();
-    setData(newData);
+    setData(clearAllData());
   }, []);
-
   const refresh = useCallback(() => {
     setData(loadData());
+  }, []);
+
+  // === 周期账单操作 ===
+  const addRecurring = useCallback((rb: RecurringBill) => {
+    setData(addRecurringBill(rb));
+  }, []);
+
+  const updateRecurring = useCallback((id: string, updates: Partial<RecurringBill>) => {
+    setData(updateRecurringBill(id, updates));
+  }, []);
+
+  const deleteRecurring = useCallback((id: string) => {
+    setData(deleteRecurringBill(id));
   }, []);
 
   return {
     bills: data.bills,
     budget: data.budget,
+    recurringBills: data.recurringBills,
     add,
     remove,
     updateBudget,
@@ -66,5 +70,8 @@ export function useAppData() {
     importAll,
     clearAll,
     refresh,
+    addRecurring,
+    updateRecurring,
+    deleteRecurring,
   };
 }

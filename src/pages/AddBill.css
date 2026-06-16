@@ -1,61 +1,61 @@
 .add-bill-page {
-  padding: 12px 16px 100px;
+  padding: 8px 16px 100px;
   max-width: 420px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  animation: fadeIn 0.25s ease;
 }
 
-/* 类型切换器 */
+/* 类型切换 — 胶囊风格 */
 .ab-type-switch {
   display: flex;
-  background: #f3f4f6;
-  border-radius: 12px;
-  padding: 4px;
-  max-width: 240px;
-  margin: 0 auto 8px;
+  background: var(--color-card);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  max-width: 200px;
+  margin: 0 auto 10px;
+  box-shadow: var(--shadow-sm);
 }
 
 .ab-type-btn {
   flex: 1;
   padding: 8px 0;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-full);
   background: transparent;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  color: #999;
+  color: var(--color-text-muted);
   cursor: pointer;
-  transition: all 0.2s;
+  will-change: transform, background, color;
+  transition: all var(--transition-normal);
+}
+.ab-type-btn[data-active="true"] {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-primary);
+  font-weight: 600;
 }
 
-.ab-type-active {
-  background: #fff;
-  color: #4f46e5;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.ab-type-active.ab-type-income {
-  color: #10b981;
-}
-
-/* 余额显示 - 双栏 */
+/* 余额显示 */
 .ab-balance {
-  padding: 4px 0;
-  margin-bottom: 4px;
+  padding: 0 0 2px;
+  margin-bottom: 6px;
 }
 
 .ab-balance-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  background: #f9fafb;
-  border-radius: 12px;
-  padding: 10px 16px;
+  gap: 16px;
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 14px 20px;
   max-width: 340px;
   margin: 0 auto;
+  box-shadow: var(--shadow-sm);
 }
 
 .ab-balance-item {
@@ -65,91 +65,85 @@
 
 .ab-balance-divider {
   width: 1px;
-  height: 36px;
-  background: #e5e7eb;
+  height: 32px;
+  background: var(--color-border);
 }
 
 .ab-balance-label {
   font-size: 11px;
-  color: #999;
-  margin-bottom: 2px;
+  color: var(--color-text-muted);
+  margin-bottom: 3px;
 }
 
 .ab-balance-amount {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
 }
 
-.ab-balance-positive {
-  color: #10b981;
-}
-
-.ab-balance-negative {
-  color: #ef4444;
-}
+.ab-balance-positive { color: var(--color-income); }
+.ab-balance-negative { color: var(--color-expense); }
 
 .ab-balance-detail {
   font-size: 10px;
-  color: #bbb;
-  margin-top: 1px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
 }
 
 /* 金额显示 */
 .ab-amount-area {
   text-align: center;
-  padding: 12px 0 8px;
+  padding: 8px 0 4px;
   position: relative;
 }
 
 .ab-currency {
   font-size: 20px;
-  color: #999;
-  margin-bottom: 4px;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
 }
 
 .ab-amount {
-  font-size: 44px;
+  font-size: 48px;
   font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.2;
-  min-height: 52px;
+  color: var(--color-text);
+  line-height: 1.15;
+  min-height: 56px;
   word-break: break-all;
 }
 
-.ab-amount-empty {
-  color: #ccc;
+.ab-amount-empty { color: #cbd5e1; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-12px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 .ab-saved-toast {
   position: absolute;
-  top: 0;
+  top: -2px;
   left: 50%;
   transform: translateX(-50%);
-  background: #22c55e;
+  background: var(--color-income);
   color: #fff;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 14px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
   font-weight: 600;
   animation: toastIn 0.3s ease;
-}
-
-@keyframes toastIn {
-  from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  will-change: opacity, transform;
 }
 
 /* 分类 */
 .ab-section-label {
   font-size: 13px;
-  color: #999;
+  color: var(--color-text-muted);
   margin: 12px 0 8px;
   padding-left: 4px;
 }
 
 /* 备注 */
 .ab-note-area {
-  max-width: 360px;
+  max-width: 320px;
   margin: 12px auto 0;
   width: 100%;
 }
@@ -157,19 +151,19 @@
 .ab-note-toggle {
   width: 100%;
   padding: 10px 16px;
-  border: 1px dashed #ddd;
-  border-radius: 12px;
-  background: transparent;
-  color: #999;
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-card);
+  color: var(--color-text-muted);
   font-size: 14px;
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s;
+  will-change: border-color, color;
+  transition: border-color var(--transition-normal), color var(--transition-normal);
 }
-
 .ab-note-toggle:active {
-  border-color: #4f46e5;
-  color: #4f46e5;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .ab-note-input-wrap {
@@ -181,53 +175,53 @@
 .ab-note-input {
   flex: 1;
   padding: 10px 14px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color var(--transition-normal);
 }
-
-.ab-note-input:focus {
-  border-color: #4f46e5;
-}
+.ab-note-input:focus { border-color: var(--color-primary); }
 
 .ab-note-done {
   padding: 10px 14px;
   border: none;
-  border-radius: 12px;
-  background: #4f46e5;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
   color: #fff;
   font-size: 13px;
   cursor: pointer;
   white-space: nowrap;
+  will-change: transform;
+  transition: transform var(--transition-fast);
 }
+.ab-note-done:active { transform: scale(0.95); }
 
 /* 保存按钮 */
 .ab-save-btn {
-  margin-top: 16px;
+  margin-top: 14px;
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
   align-self: center;
-  padding: 14px;
+  padding: 15px;
   border: none;
-  border-radius: 14px;
-  background: #e0e0e0;
-  color: #999;
+  border-radius: var(--radius-lg);
+  background: #e2e8f0;
+  color: var(--color-text-muted);
   font-size: 17px;
   font-weight: 600;
   cursor: not-allowed;
-  transition: all 0.2s;
+  will-change: transform, background, box-shadow;
+  transition: all var(--transition-normal);
 }
 
 .ab-save-btn-active {
-  background: #4f46e5;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.3);
+  box-shadow: var(--shadow-primary);
 }
-
 .ab-save-btn-active:active {
   transform: scale(0.97);
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 2px 8px rgba(99,102,241,0.3);
 }

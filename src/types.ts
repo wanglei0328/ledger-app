@@ -18,6 +18,26 @@ export interface Category {
 export interface AppData {
   bills: Bill[];
   budget: number; // 月度预算，0 表示未设置
+  recurringBills: RecurringBill[]; // 周期账单
+}
+
+// ==================== 周期账单 ====================
+
+export type CycleType = 'daily' | 'weekly' | 'monthly' | 'yearly';
+
+export interface RecurringBill {
+  id: string;
+  amount: number;
+  type: 'expense' | 'income';
+  categoryKey: string;
+  note: string;
+  cycle: CycleType;
+  cycleDay: number;     // 月:1-31 | 周:0-6(周日=0) | 年:月日如615=6月15日 | 天:不用
+  startDate: string;    // "2026-06-01"
+  endDate?: string;     // 可选截止日期
+  isActive: boolean;
+  lastGenerated?: string;
+  nextDueDate: string;
 }
 
 export interface MonthlyStats {
